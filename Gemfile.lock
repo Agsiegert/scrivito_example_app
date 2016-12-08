@@ -187,13 +187,13 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
-  rails (= 4.2.7.1)
+  rails
   rails_12factor
   sass-rails (~> 5.0)
   scrivito (= 1.7.0.rc1)
   scrivito_advanced_editors
   secure_headers
-  uglifier (>= 1.3.0)
+  uglifier
 
 BUNDLED WITH
    1.13.6
