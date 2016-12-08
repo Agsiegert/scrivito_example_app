@@ -9,5 +9,5 @@ Rails.application.configure do
   config.consider_all_requests_local = true
   config.eager_load = false
   config.public_file_server.enabled = true
-  config.static_cache_control = 'public, max-age=3600'
+  config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=3600' }
 end
