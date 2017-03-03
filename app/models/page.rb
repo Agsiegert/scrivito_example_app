@@ -7,7 +7,7 @@ class Page < Obj
   attribute :title, :string
 
   def display_breadcrumb_and_title?
-    !(display_breadcrumb_and_title == "no")
+    display_breadcrumb_and_title != "no"
   end
 
   def text_extract

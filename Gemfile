@@ -12,3 +12,9 @@ gem 'scrivito', '~> 1.7.0'
 gem 'scrivito_advanced_editors'
 gem 'secure_headers'
 gem 'uglifier', '>= 1.3.0'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'binding_of_caller'
+end
