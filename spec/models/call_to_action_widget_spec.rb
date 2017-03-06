@@ -1,8 +1,8 @@
 
 require 'rails_helper'
 
-RSpec.describe CallToActionWidget, :type => :model do
-  it { is_expected.to respond_to(:action_link ) }
+RSpec.describe CallToActionWidget, type: :model do
+  it { is_expected.to respond_to(:action_link) }
   it { is_expected.to respond_to(:alignment) }
   it { is_expected.to respond_to(:button_style) }
   it { is_expected.to respond_to(:size) }
@@ -19,7 +19,6 @@ RSpec.describe CallToActionWidget, :type => :model do
 
   describe "self.info_text_for_thumbnail" do
     it "returns description text" do
-    
       expect(CallToActionWidget.info_text_for_thumbnail).to eql "Button with various styling options and sizes"
     end
   end

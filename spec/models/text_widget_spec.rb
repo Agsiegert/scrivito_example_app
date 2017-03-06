@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe TextWidget, :type => :model do
-  it { is_expected.to respond_to(:alignment ) }
+RSpec.describe TextWidget, type: :model do
+  it { is_expected.to respond_to(:alignment) }
   it { is_expected.to respond_to(:text) }
 
   describe :text_extract do
@@ -19,7 +19,6 @@ RSpec.describe TextWidget, :type => :model do
       allow(text_widget).to receive(:text).and_return(html_text)
 
       text = "this is a the text"
-      
       expect(text_widget.text_extract).to eq(text)
     end
   end

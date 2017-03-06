@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe BlogPostPage, :type => :model do
-  it { is_expected.to respond_to(:abstract ) }
+RSpec.describe BlogPostPage, type: :model do
+  it { is_expected.to respond_to(:abstract) }
   it { is_expected.to respond_to(:author_email) }
   it { is_expected.to respond_to(:author_name) }
   it { is_expected.to respond_to(:image) }
@@ -17,10 +17,8 @@ RSpec.describe BlogPostPage, :type => :model do
     end
   end
 
-
   describe "self.info_text_for_thumbnail" do
     it "returns description text" do
-    
       expect(BlogPostPage.info_text_for_thumbnail).to eql "A single blog post."
     end
   end

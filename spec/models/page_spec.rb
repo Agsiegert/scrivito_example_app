@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Page, :type => :model do
-  it { is_expected.to respond_to(:body ) }
+RSpec.describe Page, type: :model do
+  it { is_expected.to respond_to(:body) }
   it { is_expected.to respond_to(:child_order) }
   it { is_expected.to respond_to(:display_breadcrumb_and_title) }
   it { is_expected.to respond_to(:tags) }
@@ -18,7 +18,6 @@ RSpec.describe Page, :type => :model do
       allow(page).to receive(:display_breadcrumb_and_title).and_return("yes")
       expect(page.display_breadcrumb_and_title?).to be_truthy
     end
-
   end
 
   describe :text_extract do
