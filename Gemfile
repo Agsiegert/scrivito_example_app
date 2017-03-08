@@ -17,4 +17,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'binding_of_caller'
+  gem 'rails-controller-testing'
 end
