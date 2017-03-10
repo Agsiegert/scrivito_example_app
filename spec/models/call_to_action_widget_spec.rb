@@ -10,16 +10,9 @@ RSpec.describe CallToActionWidget, type: :model do
   describe :text_extract do
     it "returns the call to action link title" do
       link = Scrivito::Link.new(url: "#", title: "Click here")
-      widget = CallToActionWidget.new
-      allow(widget).to receive(:action_link).and_return(link)
+      widget = mock_widget(CallToActionWidget, action_link: link)
 
       expect(widget.text_extract).to eq("Click here")
-    end
-  end
-
-  describe "self.info_text_for_thumbnail" do
-    it "returns description text" do
-      expect(CallToActionWidget.info_text_for_thumbnail).to eql "Button with various styling options and sizes"
     end
   end
 end

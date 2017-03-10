@@ -10,16 +10,10 @@ RSpec.describe BlogPostPage, type: :model do
   describe :text_extract do
     it "returns an abstract when one is provided" do
       short_abstract = "this is a short abstract of the blog post"
-      blog = BlogPostPage.new
-      allow(blog).to receive(:abstract).and_return(short_abstract)
+      blog = mock_obj(BlogPostPage, abstract: short_abstract)
 
-      expect(blog.text_extract).to eq(short_abstract)
-    end
-  end
-
-  describe "self.info_text_for_thumbnail" do
-    it "returns description text" do
-      expect(BlogPostPage.info_text_for_thumbnail).to eql "A single blog post."
+      expect(blog.abstract).to eq(short_abstract)
+      expect(blog[:abstract]).to eq(short_abstract)
     end
   end
 end

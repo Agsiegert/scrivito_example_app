@@ -9,7 +9,6 @@ RSpec.describe PageController, type: :controller do
 
   describe 'GET index' do
     it 'renders the page' do
-
       get :index
 
       expect(response.status).to eq(200)

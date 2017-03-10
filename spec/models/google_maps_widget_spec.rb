@@ -7,16 +7,9 @@ RSpec.describe GoogleMapsWidget, type: :model do
   describe :text_extract do
     it "returns the address" do
       address = "Kitzingstr 17"
-      map = GoogleMapsWidget.new
-      allow(map).to receive(:address).and_return(address)
+      map = mock_widget(GoogleMapsWidget, address: address)
 
       expect(map.text_extract).to eq(address)
-    end
-  end
-
-  describe "self.info_text_for_thumbnail" do
-    it "returns description text" do
-      expect(GoogleMapsWidget.info_text_for_thumbnail).to eql "Show a map that displays a pin for a given address."
     end
   end
 end

@@ -7,25 +7,17 @@ RSpec.describe TextWidget, type: :model do
   describe :text_extract do
     it "returns text" do
       text = "this is a the text"
-      text_widget = TextWidget.new
-      allow(text_widget).to receive(:text).and_return(text)
+      text_widget = mock_widget(TextWidget, text: text)
 
       expect(text_widget.text_extract).to eq(text)
     end
 
     it "returns stripped text" do
-      html_text = "<div>this is a the text</div>"
-      text_widget = TextWidget.new
-      allow(text_widget).to receive(:text).and_return(html_text)
+      html_text = "<div>this is the text</div>"
+      text_widget = mock_widget(TextWidget, text: html_text)
 
-      text = "this is a the text"
+      text = "this is the text"
       expect(text_widget.text_extract).to eq(text)
-    end
-  end
-
-  describe "self.info_text_for_thumbnail" do
-    it "returns description text" do
-      expect(TextWidget.info_text_for_thumbnail).to eql "Display text and HTML content."
     end
   end
 end

@@ -10,14 +10,14 @@ RSpec.describe CardWidget, type: :model do
   it { is_expected.to respond_to(:title) }
 
   describe :show_heading? do
-    it "will not dispaly when set to no" do
-      card = CardWidget.new
-      allow(card).to receive(:show_heading).and_return("no")
+    it "will not display when set to no" do
+      card = mock_widget(CardWidget, show_heading: "no")
+
       expect(card.show_heading?).to be_falsey
     end
     it "will display when set to yes (default)" do
-      card = CardWidget.new
-      allow(card).to receive(:show_heading).and_return("yes")
+      card = mock_widget(CardWidget, show_heading: "yes")
+
       expect(card.show_heading?).to be_truthy
     end
   end
@@ -25,19 +25,10 @@ RSpec.describe CardWidget, type: :model do
   describe :text_extract do
     it "returns the title and text from content widgets" do
       text = "this is the text in the text widget"
-      text_widget = TextWidget.new
-      allow(text_widget).to receive(:text).and_return(text)
-      card = CardWidget.new
-      allow(card).to receive(:title).and_return("Card Title")
-      allow(card).to receive(:content).and_return([text_widget])
+      text_widget = mock_widget(TextWidget, text: text)
+      card = mock_widget(CardWidget, title: "Card Title", content: [text_widget])
 
       expect(card.text_extract).to eq(["Card Title", text])
-    end
-  end
-
-  describe "self.info_text_for_thumbnail" do
-    it "returns description text" do
-      expect(CardWidget.info_text_for_thumbnail).to eql "Card with selectable color, background, title bar, tagline, and shadow."
     end
   end
 end
