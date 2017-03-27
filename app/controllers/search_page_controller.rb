@@ -1,4 +1,4 @@
-class SearchPageController < CmsController
+    class SearchPageController < CmsController
 
   HITS_PER_PAGE = 5
 
