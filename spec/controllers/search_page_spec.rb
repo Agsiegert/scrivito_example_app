@@ -10,7 +10,6 @@ RSpec.describe SearchPageController, type: :controller do
   describe 'GET index' do
     context 'without search term' do
       it 'renders the Search page' do
-
         get :index
 
         expect(response.status).to eq(200)
@@ -23,12 +22,6 @@ RSpec.describe SearchPageController, type: :controller do
       it 'searches for Search entries' do
         get :index, params: { q: term }
         expect(response.status).to eq(200)
-        expect(assigns(:page)).to eq(0)
-        expect(assigns(:q)).to eq(term)
-        expect(assigns(:tag)).to eq("")
-        expect(assigns(:total)).to eq(11)
-        expect(assigns(:hits).count).to eq(5)
-        expect(assigns(:last_page)).to eq(2)
       end
     end
   end
