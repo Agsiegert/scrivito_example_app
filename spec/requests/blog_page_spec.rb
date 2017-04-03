@@ -18,8 +18,9 @@ RSpec.describe "BlogPage", type: :request do
       assert_select "h4", posts[0].title
       assert_select "h4", posts[1].title
       assert_select "h4", posts[2].title
+      # check an element does not exist past our set limit.
       assert_select "h4", count: 0, html: posts[3].title
-      # the photo stream includes links to the last 5 recent posts
+      # the photo stream includes links to the last 5 recent posts.
       expect(response.body).to_not include posts[5].title
       # Older only shows if there are more than 3 posts
       assert_select ".previous", "← Older"
