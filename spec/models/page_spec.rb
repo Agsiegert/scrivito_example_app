@@ -21,7 +21,7 @@ RSpec.describe Page, type: :model do
   end
 
   describe :text_extract do
-    it "returns and empty string when there is no text" do
+    it "returns an empty string when there is no text" do
       page = Page.new
 
       expect(page.text_extract).to eq("")

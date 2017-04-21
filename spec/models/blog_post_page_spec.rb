@@ -12,7 +12,7 @@ RSpec.describe BlogPostPage, type: :model do
       short_abstract = "this is a short abstract of the blog post"
       blog = mock_obj(BlogPostPage, abstract: short_abstract)
 
-      expect(blog.abstract).to eq(short_abstract)
+      expect(blog.text_extract).to eq(short_abstract)
       expect(blog[:abstract]).to eq(short_abstract)
     end
   end
